@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hw2part2</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+
+<header>
+</header>
+
+<section>
+
+
+<script>
+
+function sum()
+{
+  var num1=parseInt(document.integers.elements[0].value, 10);
+  var num2=parseInt(document.integers.elements[1].value, 10);
+  var num3=parseInt(document.integers.elements[2].value, 10);
+  
+  alert(num1+num2+num3);
+}
+
+function average()
+{
+  var num1=parseInt(document.integers.elements[0].value, 10);
+  var num2=parseInt(document.integers.elements[1].value, 10);
+  var num3=parseInt(document.integers.elements[2].value, 10);
+  
+  alert(num1+num2+num3/3);
+
+}
+
+function product()
+{
+  var num1=parseInt(document.integers.elements[0].value, 10);
+  var num2=parseInt(document.integers.elements[1].value, 10);
+  var num3=parseInt(document.integers.elements[2].value, 10);
+  
+  alert(num1*num2*num3);
+
+}
+
+function smallest()
+{
+  var num1=parseInt(document.integers.elements[0].value, 10);
+  var num2=parseInt(document.integers.elements[1].value, 10);
+  var num3=parseInt(document.integers.elements[2].value, 10);
+  
+  alert(Math.min(num1, num2, num3));
+
+}
+
+function largest()
+{
+  var num1=parseInt(document.integers.elements[0].value, 10);
+  var num2=parseInt(document.integers.elements[1].value, 10);
+  var num3=parseInt(document.integers.elements[2].value, 10);
+  
+  alert(Math.max(num1, num2, num3));
+
+}
+
+
+//var number1, number2, number3, numb1, numb2, numb3, sum;
+
+//number1 = prompt( "Enter the first number", "" );
+
+//number2 = prompt( "Enter the second number", "" );
+
+//number3 = prompt( "Enter the third number", "" );
+
+
+//numb1 = parseInt( number1 );
+
+//numb2 = parseInt( number2 );
+
+//numb3 = parseInt( number3 );
+
+
+//var sum = numb1 + numb2 + numb3;
+
+//document.write("<h2>The sum of the numbers is " + sum + "</h2>");
+
+</script>
+
+
+
+<form name="integers">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value=""><br>
+<input type="button" value="sum" onclick="sum()">
+<input type="button" value="average" onclick="average()">
+<input type="button" value="product" onclick="product()">
+<input type="button" value="smallest" onclick="smallest()">
+<input type="button" value="largest" onclick="largest()">
+</form>
+
+
+
+
+</section>
+
+<footer>
+</footer>
+
+</body>
+
+</html> 

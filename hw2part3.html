@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hw2part3</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script>
+
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("textarea").fadeTo("slow",0.25);
+  });
+});
+
+
+</script>
+
+</head>
+
+<body onload="document.getElementById('num0').focus();">
+
+<header>
+</header>
+
+<section>
+
+
+<script>
+
+function pred(value) {
+  return value ? 1 : 0;
+}
+
+function showResults()
+{
+  var num1=parseInt(document.integers.elements[0].value, 10);
+  var num2=parseInt(document.integers.elements[1].value, 10);
+  var num3=parseInt(document.integers.elements[2].value, 10);
+  var num4=parseInt(document.integers.elements[3].value, 10);
+  var num5=parseInt(document.integers.elements[4].value, 10);
+  
+  var pos = pred(num1 > 0) + pred(num2 > 0) + pred(num3 > 0) + pred(num4 > 0) + pred(num5 > 0);
+  var neg = pred(num1 < 0) + pred(num2 > 0) + pred(num3 > 0) + pred(num4 > 0) + pred(num5 > 0);
+  var zero = pred(num1 === 0) + pred(num2 === 0) + pred(num3 === 0) + pred(num4 === 0) + pred(num5 === 0);
+  
+  $(".positive .count").text(pos);
+    $(".negative .count").text(neg);
+  $(".zeros .count").text(zero);
+
+  $(".results").fadeIn();
+}
+
+function reset() {
+ $(".results").fadeOut();
+ document.getElementById('num0').focus();
+}
+</script>
+
+
+
+<form name="integers">
+<input type="text" id="num0" value="">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value=""><br>
+
+
+</form>
+
+<div>
+<input type="button"  onclick="showResults()" value="SUBMIT">
+<input type="reset" value="RESET" onclick="reset()">
+</div>
+
+<div class="results" style="display:none">
+    Results:
+	<div class="positive">
+		<span class="label">Count of positive numbers:</span>
+		<span class="count"></span>
+	</div>
+	<div class="negative">
+		<span class="label">Count of negative numbers:</span>
+		<span class="count"></span>
+	</div>
+	<div class="zeros">
+		<span class="label">Count of zeros numbers:</span>
+		<span class="count"></span>
+	</div>
+</div>
+
+</form>
+
+
+
+</section>
+
+<footer>
+</footer>
+
+</body>
+
+</html> 

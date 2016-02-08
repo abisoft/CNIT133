@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/*reset margin and padding to zero*/
+
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+body { 
+      background: url('debut_light.png');
+   }
+
+nav {
+      font-family: 'Slabo 27px', serif; helvetica;
+      text-align: center;
+      padding: 10px;
+      word-spacing: 20px;
+}
+
+a {
+      text-decoration: none;
+}
+
+a:link {
+      color: green;
+}
+
+a:visited {
+       color: pink;
+}
+
+a:hover {
+      color: red;
+}
+
+
+
+.maintable {
+       width: 800px;
+       font-family: Slabo+27px; helvetica;
+       margin: 0 auto;
+}
+
+tr.tabletop {
+        font-size: 20px;
+        color: #000;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-color: #1a334c; 
+        font-family: 'Montserrat'; helvetica;
+}
+
+.validation-icons {
+  margin: 0 auto;
+}
+
+th {
+     font-family: 'Montserrat'; helvetica;
+     padding-top: 40px;
+     padding-bottom: 40px;
+}
+
+h1 {
+       font-family: 'Montserrat'; helvetica;
+       text-align: center;
+       font-size: 38px;
+}
+
+p {
+       font-family: 'Montserrat', serif; helvetica;
+       text-align: center;
+       color: green;
+       font-size: 25px;
+}
+
+td {
+       font-family: 'Slabo 27px', serif; helvetica;
+       padding: 25px;
+}
+
+tr:nth-child(even) {background: #ccc}
+tr:nth-child(odd) {background: #FFF}
+
+td.foot {
+        background-color: #1a334c; 
+        font-size: 10pt; 
+        color: #fff; 
+        text-align: center;
+        }
+
+footer {
+  display: flex;
+  align-items: center;
+}
+
+.heading1 {
+   font-family: Times New Roman;
+   color: red;
+}
+
+.heading2 {
+    font-family: Arial;
+    color: blue;
+}
+
+.heading3 {
+    font-family: Impact;
+    color: green;
+}
+
+
+
