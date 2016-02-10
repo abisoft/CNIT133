@@ -10,6 +10,7 @@ html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h
 
 body { 
       background: url('debut_light.png');
+      text-align: center;
    }
 
 nav {
@@ -109,6 +110,23 @@ footer {
     font-family: Impact;
     color: green;
 }
+
+section {
+text-align: center;
+padding-top: 20px;
+}
+
+.back {
+font-family: helvetica;
+font-size: 12px;
+color: grey;
+padding-top: 30px;
+}
+
+.centered {
+	margin: 0 auto;
+}
+
 
 
 
