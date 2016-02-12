@@ -43,7 +43,7 @@ function showResults()
   var num5=parseInt(document.integers.elements[4].value, 10);
   
   var pos = pred(num1 > 0) + pred(num2 > 0) + pred(num3 > 0) + pred(num4 > 0) + pred(num5 > 0);
-  var neg = pred(num1 < 0) + pred(num2 > 0) + pred(num3 > 0) + pred(num4 > 0) + pred(num5 > 0);
+  var neg = pred(num1 < 0) + pred(num2 < 0) + pred(num3 < 0) + pred(num4 < 0) + pred(num5 < 0);
   var zero = pred(num1 === 0) + pred(num2 === 0) + pred(num3 === 0) + pred(num4 === 0) + pred(num5 === 0);
   
   $(".positive .count").text(pos);
