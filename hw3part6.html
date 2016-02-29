@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HW3Part6</title>
+<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<style type="text/css">
+
+body {
+      background: url('debut_light.png');
+   }
+
+h1 {
+     font-family: 'Slabo 27px', serif;
+     text-align: center;
+     font-size: 24px;
+     }
+
+p {
+     font-family: 'Slabo 27px', serif;
+     text-align: center;
+     color: green;
+}
+
+
+</style>
+
+<script>
+
+ function RandomSet(){
+    document.myForm.kake1.value = Math.floor((Math.random() * 9) + 1);
+    document.myForm.kake2.value = Math.floor((Math.random() * 9) + 1);
+    document.myForm.kaitou.value = "";
+ }
+
+ function AnswerCheck(){
+    Q1 = eval(document.myForm.kake1.value);
+    Q2 = eval(document.myForm.kake2.value);
+    Input = eval(document.myForm.kaitou.value);
+    Seikai = Q1 * Q2;
+    if ( Input == Seikai ){
+      alert("Very Good!");
+      RandomSet();
+    }else{
+      alert("No. Please try again.");
+    }
+
+ }
+
+$(RandomSet);
+   //RandomSet();
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+ <h1>Homework3 Part6</h1>
+
+</header>
+
+<section>
+  <form name="myForm">
+ <p>
+ <input type="text" size="2" name="kake1"> ×
+ <input type="text" size="2" name="kake2"> ＝
+ <input type="text" size="2" name="kaitou">　
+ <input type="button" value="submit" onclick="AnswerCheck()">
+ </p>
+</form>
+
+
+
+
+</section>
+
+<footer>
+</footer>
+
+</body>
+
+</html>

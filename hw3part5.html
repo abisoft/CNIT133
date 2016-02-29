@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HW3Part5</title>
+<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<style type="text/css">
+
+body {
+      background: url('debut_light.png');
+   }
+
+h1 {
+     font-family: 'Slabo 27px', serif;
+     text-align: center;
+     font-size: 24px;
+     }
+
+p {
+     font-family: 'Slabo 27px', serif;
+     text-align: center;
+     color: green;
+}
+
+
+</style>
+
+<script>
+function cf() {
+	c=eval(document.form4.c.value);
+	f=9/5*c+32;
+	document.form4.f.value=Math.round(f*10)/10;
+
+  if (cf !=  NaN){
+    alert ("Please input a numeric value")
+  }
+}
+
+function fc() {
+	f=eval(document.form5.f.value);
+	c=5/9*(f-32);
+	document.form5.c.value=Math.round(c*10)/10;
+  if (fc !=  NaN){
+    alert ("Please input a numeric value")
+ }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+ <h1>Homework3 Part5</h1>
+
+</header>
+
+<section>
+  <br>
+  <H4>C to F</H4>
+  <br>
+  <form name="form4">
+  Celsius<input type="text" name="c" size="6" style="ime-mode:disabled"><input type="button" value="submit" onClick="cf()"><br>
+  <br>
+  Fahrenheit<input type="text" name="f" size="6"><br>
+  <br>
+  <input type="reset" value="Reset"><br>
+  </form>
+  <br>
+  <hr>
+  <br>
+  <H4>F to C</H4>
+  <br>
+  <form name="form5">
+  Fahrenheit<input type="text" name="f" size="6" style="ime-mode:disabled"><input type="button" value="submit" onClick="fc()"><br>
+  <br>
+  Celsius<input type="text" name="c" size="6"><br>
+  <br>
+  <input type="reset" value="Reset"><br>
+  </form>
+
+
+
+
+</section>
+
+<footer>
+</footer>
+
+</body>
+
+</html>

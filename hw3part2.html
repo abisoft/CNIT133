@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>HW3Part2</title>
+      <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' >
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+      <style type="text/css">
+         body {
+         background: url('debut_light.png');
+         }
+         h1 {
+         font-family: 'Slabo 27px', serif;
+         text-align: center;
+         font-size: 24px;
+         }
+         p {
+         font-family: 'Slabo 27px', serif;
+         text-align: center;
+         color: green;
+         }
+         input.t {text-align: right;}
+      </style>
+
+      <script>
+         $( document ).tooltip();
+
+         function getValue(id) {
+           return parseFloat(document.getElementById(id).value);
+         }
+
+         function setValue(id, value) {
+           document.getElementById(id).value = value.toFixed(2);
+         }
+
+         function process(){
+
+           var item1 = getValue('int_item1');
+           var item1total = 239.99 * item1;
+
+           var item2 = getValue('int_item2');
+           var item2total = 129.75 * item2;
+
+           var item3 = getValue('int_item3');
+           var item3total = 99.95 * item3;
+
+           var item4 = getValue('int_item3');
+           var item4total = 350.89 * item4;
+
+           var total_amount_sold =  item1total + item2total + item3total + item4total;
+
+           setValue('total_item1', item1total);
+           setValue('total_item2', item2total);
+           setValue('total_item3', item3total);
+           setValue('total_item4', item4total);
+           setValue('total_amount_sold', total_amount_sold);
+
+           var salary = total_amount_sold + total_amount_sold * 0.09 + 200;
+
+           setValue('salary', salary);
+
+         }
+
+
+      </script>
+   </head>
+   <body>
+      <header>
+         <h1>Homework3 Part2</h1>
+      </header>
+      <section>
+         Salesperson: <input id="salesperson" title="Please make sure that the salesperson's name is spelled correctly" type="text" name="sp" size="20"><br>
+         <input type="button" value="Submit" onclick="process()">
+         <input type="reset" value="Reset"><br><br>
+         <table>
+            <tr>
+               <th>Item #</th>
+               <th>Price</th>
+               <th>Number Sold</th>
+               <th>Total</th>
+            </tr>
+            <tr>
+               <td>1</td>
+               <td>$239.99</td>
+               <td><input type="text" class="t" id="int_item1"></td>
+               <td><input type="text"  class="t" id="total_item1"></td>
+            </tr>
+            <tr>
+               <td>2</td>
+               <td>$129.75</td>
+               <td><input type="text" class="t" id="int_item2"></td>
+               <td><input type="text"  class="t" id="total_item2"></td>
+            </tr>
+            <tr>
+               <td>3</td>
+               <td>$99.95</td>
+               <td><input type="text" class="t" id="int_item3"></td>
+               <td><input type="text"  class="t" id="total_item3"></td>
+            </tr>
+            <tr>
+               <td>4</td>
+               <td>$350.89</td>
+               <td><input type="text" class="t" id="int_item4"></td>
+               <td><input type="text" class="t" id="total_item4"></td>
+            </tr>
+            <tr>
+               <td colspan="3">Total Amount Sold:</td>
+               <td><input type="text" class="t" id="total_amount_sold"></td>
+            </tr>
+            <tr>
+               <td colspan="3">Total Weekly Earnings:</td>
+               <td><input type="text"  class="t" id="salary"></td>
+            </tr>
+         </table>
+      </section>
+      <footer></footer>
+   </body>
+</html>

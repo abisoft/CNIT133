@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Homework3 Part4</title>
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+
+  body {
+    background: url('debut_light.png');
+  }
+
+  h1 {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    color: green;
+  }
+  </style>
+
+  <script>
+
+  function checkPalindrome() {
+    var revStr = "";
+    var str = document.getElementById("str").value;
+    var length = str.length;
+    var isPalindrome = true;
+    var j = 0;
+    for(j=0; j < (length / 2); j++) {
+      if (str.charAt(j) !== str.charAt(length - j - 1)) {
+        isPalindrome = false;
+        break;
+      }
+    }
+
+    if(isPalindrome) {
+      alert(str+" -is Palindrome");
+    } else {
+      alert(str+" -is not a Palindrome");
+    }
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+  </header>
+
+  <section>
+
+    <form >
+      Enter some text: <input type="text" id="str" name="string" /><br />
+      <input type="submit" value="Check" onclick="checkPalindrome();"/>
+    </form>
+
+  </section>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>HW3Part3</title>
+      <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' >
+
+      <style type="text/css">
+         body {
+         background: url('debut_light.png');
+         }
+         h1 {
+         font-family: 'Slabo 27px', serif;
+         text-align: center;
+         font-size: 24px;
+         }
+         p {
+         font-family: 'Slabo 27px', serif;
+         text-align: center;
+         color: green;
+         }
+         input.t {text-align: right;}
+      </style>
+
+   <script>
+
+   function getNewbalance()
+         {
+
+            var accnum = parseFloat(document.myForm.accountnum.value );
+
+            var  bal = parseFloat(document.myForm.balance.value );
+
+            var  item = parseFloat(document.myForm.items.value );
+
+            var  cre = parseFloat(document.myForm.credits.value );
+
+            var  cre = parseFloat(document.myForm.creditlimit.value );
+
+            var newbalance =  (bal + item - cre);
+            document.myForm.bmi.value = newbalance;
+            /*document.myForm.newbalance.value = (balance + items - credits);*/
+
+            if ( newbalance > creditlimit )
+              window.display("Credit limit exceeded by X")
+
+          }
+
+   </script>
+
+   </head>
+   <body>
+      <header>
+         <h1>Homework3 Part3</h1>
+      </header>
+      <section>
+
+         <form id = "myForm" name = "myForm">
+                  <table>
+                     <tr>
+                         <td>Account number:</td>
+                         <td><input id="accountnum" name="accountnum" type="text"></td>
+                    </tr>
+                    <tr>
+                         <td>Balance at the beginning of the month:</td>
+                         <td><input id="balance" name="balance" type="text"></td>
+                    </tr>
+                    <tr>
+                          <td>Total of all items charged by this customer this month:</td>
+                          <td><input id="items" name="items" type="text"></td>
+                     </tr>
+                     <tr>
+                          <td> Total of all credits applied to this customer's account this month:</td>
+                          <td><input id="credits" name="credits" type="text"></td>
+                     </tr>
+                     <tr>
+                          <td> Allowed credit limit:</td>
+                          <td><input id="creditlimit" name="creditlimit" type="text"></td>
+                     </tr>
+                     <tr>
+                         <td><input type="button" name="" value="New Balance"
+                                onclick="getNewbalance()" /></td>
+
+
+                         <td><input id="bmi" name ="bmi" type="text"></td>
+                     </tr>
+                      <tr>
+
+                         <td colspan="2"><input type="reset" value="Reset"></td>
+
+                     </tr>
+
+                  </table>
+               </form>
+
+      </section>
+      <footer></footer>
+   </body>
+</html>
