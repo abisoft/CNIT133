@@ -33,8 +33,9 @@ function cf() {
 	f=9/5*c+32;
 	document.form4.f.value=Math.round(f*10)/10;
 
-  if (cf !=  NaN){
+  if (cf === NaN){
     alert ("Please input a numeric value")
+    return;
   }
 }
 
@@ -42,10 +43,13 @@ function fc() {
 	f=eval(document.form5.f.value);
 	c=5/9*(f-32);
 	document.form5.c.value=Math.round(c*10)/10;
-  if (fc !=  NaN){
+  if (fc === Nan){
     alert ("Please input a numeric value")
  }
 }
+/*if (isNaN(result)) {
+  alert("Please enter numbers only")
+  return;*/
 
 </script>
 

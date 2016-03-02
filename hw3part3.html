@@ -22,7 +22,10 @@
          input.t {text-align: right;}
       </style>
 
+
+
    <script>
+
 
    function getNewbalance()
          {
@@ -35,9 +38,10 @@
 
             var  cre = parseFloat(document.myForm.credits.value );
 
-            var  cre = parseFloat(document.myForm.creditlimit.value );
+            var  crelim = parseFloat(document.myForm.creditlimit.value );
 
-            var newbalance =  (bal + item - cre);
+            /*var newbalance =  (bal + item - cre);*/
+            var newbalance = (bal + cre - item);
             document.myForm.bmi.value = newbalance;
             /*document.myForm.newbalance.value = (balance + items - credits);*/
 
