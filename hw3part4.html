@@ -4,6 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>Homework3 Part4</title>
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
   <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <style type="text/css">
 
@@ -25,6 +30,26 @@
   </style>
 
   <script>
+  $(function() {
+
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+
+    $( "#opener" ).click(function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+  });
+
 
   function checkPalindrome() {
     var revStr = "";
@@ -62,7 +87,12 @@
     </form>
 
   </section>
+  <button id="opener">Click for instructions</button>
 
+<div id="dialog" title="Instructions">
+<p>Input a five-digit integer (not starting with zero) to display if it is a palindrome,
+  not a palindrome, or an input error</p>
+</div>
   <footer>
   </footer>
 
