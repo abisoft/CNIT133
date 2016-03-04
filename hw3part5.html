@@ -29,27 +29,30 @@ p {
 
 <script>
 function cf() {
-	c=eval(document.form4.c.value);
-	f=9/5*c+32;
-	document.form4.f.value=Math.round(f*10)/10;
-
-  if (cf === NaN){
-    alert ("Please input a numeric value")
-    return;
-  }
+	var c=parseFloat(document.form4.c.value);
+	var f=9/5*c+32;
+  var r = Math.round(f*10)/10;
+  verifyIsNumber(r);
+	document.form4.f.value=r;
 }
 
 function fc() {
-	f=eval(document.form5.f.value);
-	c=5/9*(f-32);
-	document.form5.c.value=Math.round(c*10)/10;
-  if (fc === Nan){
-    alert ("Please input a numeric value")
- }
+	var f=parseFloat(document.form5.f.value);
+	var c=5/9*(f-32);
+  var r = Math.round(c*10)/10;
+  verifyIsNumber(r);
+	document.form5.c.value=r;
 }
-/*if (isNaN(result)) {
-  alert("Please enter numbers only")
-  return;*/
+
+function verifyIsNumber(num1){
+     if( isNaN(num1)){
+         alert("Please enter only numbers");
+     }
+
+}
+
+
+
 
 </script>
 
@@ -71,6 +74,8 @@ function fc() {
   Celsius<input type="text" name="c" size="6" style="ime-mode:disabled"><input type="button" value="submit" onClick="cf()"><br>
   <br>
   Fahrenheit<input type="text" name="f" size="6"><br>
+
+
   <br>
   <input type="reset" value="Reset"><br>
   </form>

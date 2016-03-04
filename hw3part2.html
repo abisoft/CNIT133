@@ -51,6 +51,15 @@
 
            var total_amount_sold =  item1total + item2total + item3total + item4total;
 
+        var numbers = [int_item1,int_item2, int_item3, int_item4];
+
+        for (number in numbers){
+        if( isNaN(numbers[number])){
+            alert("Please enter only numbers")
+            return;
+        }
+      }
+
            setValue('total_item1', item1total);
            setValue('total_item2', item2total);
            setValue('total_item3', item3total);

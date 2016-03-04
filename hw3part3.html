@@ -1,103 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>HW3Part3</title>
-      <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' >
+<head>
+  <meta charset="utf-8">
+  <title>HW3Part3</title>
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' >
+  <script src="http://code.jquery.com/jquery-1.10.1.js"></script>
 
-      <style type="text/css">
-         body {
-         background: url('debut_light.png');
-         }
-         h1 {
-         font-family: 'Slabo 27px', serif;
-         text-align: center;
-         font-size: 24px;
-         }
-         p {
-         font-family: 'Slabo 27px', serif;
-         text-align: center;
-         color: green;
-         }
-         input.t {text-align: right;}
-      </style>
+  <style type="text/css">
+  body {
+    background: url('debut_light.png');
+  }
+  h1 {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    font-size: 24px;
+  }
+  p {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    color: green;
+  }
+  input.t {
+    text-align: right;
+  }
 
-
-
-   <script>
-
-
-   function getNewbalance()
-         {
-
-            var accnum = parseFloat(document.myForm.accountnum.value );
-
-            var  bal = parseFloat(document.myForm.balance.value );
-
-            var  item = parseFloat(document.myForm.items.value );
-
-            var  cre = parseFloat(document.myForm.credits.value );
-
-            var  crelim = parseFloat(document.myForm.creditlimit.value );
-
-            /*var newbalance =  (bal + item - cre);*/
-            var newbalance = (bal + cre - item);
-            document.myForm.bmi.value = newbalance;
-            /*document.myForm.newbalance.value = (balance + items - credits);*/
-
-            if ( newbalance > creditlimit )
-              window.display("Credit limit exceeded by X")
-
-          }
-
-   </script>
-
-   </head>
-   <body>
-      <header>
-         <h1>Homework3 Part3</h1>
-      </header>
-      <section>
-
-         <form id = "myForm" name = "myForm">
-                  <table>
-                     <tr>
-                         <td>Account number:</td>
-                         <td><input id="accountnum" name="accountnum" type="text"></td>
-                    </tr>
-                    <tr>
-                         <td>Balance at the beginning of the month:</td>
-                         <td><input id="balance" name="balance" type="text"></td>
-                    </tr>
-                    <tr>
-                          <td>Total of all items charged by this customer this month:</td>
-                          <td><input id="items" name="items" type="text"></td>
-                     </tr>
-                     <tr>
-                          <td> Total of all credits applied to this customer's account this month:</td>
-                          <td><input id="credits" name="credits" type="text"></td>
-                     </tr>
-                     <tr>
-                          <td> Allowed credit limit:</td>
-                          <td><input id="creditlimit" name="creditlimit" type="text"></td>
-                     </tr>
-                     <tr>
-                         <td><input type="button" name="" value="New Balance"
-                                onclick="getNewbalance()" /></td>
+  </style>
 
 
-                         <td><input id="bmi" name ="bmi" type="text"></td>
-                     </tr>
-                      <tr>
 
-                         <td colspan="2"><input type="reset" value="Reset"></td>
+  <script>
+  function invalidInput(numinput){
+    return (isNaN(numinput) || numinput < 0);
+  }
 
-                     </tr>
+  function changeText() {
+    $("textarea").css({
+      "color": "white",
+      "background-color": "#000000",
+      "font-size": "large",
+      "font-weight": "bold",
+      "padding": "1px"
+    });
+  }
 
-                  </table>
-               </form>
+  function creditAvaliable(num){
+    var crav;
+    if(num < 0)
+    crav = "Credit limit exceeded by " + Math.abs(num);
+    else if(num >= 0)
+    crav = "Credit available is " + num;
+    return crav;
+  }
 
-      </section>
-      <footer></footer>
-   </body>
-</html>
+  function getNewbalance()
+  {
+    var sum, creditava;
+    var accnum = parseFloat(document.myForm.accountnum.value );
+    var  beginbal = parseFloat(document.myForm.balance.value );
+    var  charge = parseFloat(document.myForm.items.value );
+    var  paid = parseFloat(document.myForm.credits.value );
+    var  creditlimit = parseFloat(document.myForm.creditlimit.value );
+
+    if(invalidInput(accnum) || invalidInput(creditlimit) || invalidInput(beginbal) || invalidInput(charge) || invalidInput(paid)){
+      document.getElementById("fail").innerHTML = ("All inputs must be numbers.");
+      fail.style.color = '#FF0000';
+      fail.style.fontStyle = "italic";
+    } else {
+      sum = (beginbal + charge) - paid;
+      creditava = creditlimit - sum;
+      document.getElementById("result").value = ("Account Number: " + accnum +
+      "\nCredit Limit: " + creditlimit +
+      "\nBalance at beginning of month: " + beginbal +
+      "\nTotal amount charged this month: " + charge +
+      "\nTotal amount paid this month: " + paid +
+      "\n\nSummary\nThe new balance is: " + sum +
+      "\n" + creditAvaliable(creditava));
+    }
+
+
+  }
+
+  </script>
+
+</head>
+<body>
+  <header>
+    <h1>Homework3 Part3</h1>
+  </header>
+  <section>
+
+    <form id = "myForm" name = "myForm">
+      <table>
+        <tr>
+          <td>Account number:</td>
+          <td><input id="accountnum" name="accountnum" type="text"></td>
+        </tr>
+        <tr>
+          <td>Balance at the beginning of the month:</td>
+          <td><input id="balance" name="balance" type="text"></td>
+        </tr>
+        <tr>
+          <td>Total of all items charged by this customer this month:</td>
+          <td><input id="items" name="items" type="text"></td>
+        </tr>
+        <tr>
+          <td> Total of all credits applied to this customer's account this month:</td>
+          <td><input id="credits" name="credits" type="text"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><div id="fail"></div></td>
+        </tr>
+        <tr>
+          <td> Allowed credit limit:</td>
+          <td><input id="creditlimit" name="creditlimit" type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="" value="New Balance"
+            onclick="getNewbalance()" /></td>
+
+
+            <td><textarea id="result" type="text" rows="10" cols="40"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="reset" value="Reset"></td>
+            <td><button type="button" onclick="changeText()">Click to change textarea display</button></td>
+          </tr>
+
+        </table>
+      </form>
+
+    </section>
+    <footer></footer>
+  </body>
+  </html>
