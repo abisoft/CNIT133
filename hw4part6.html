@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HW4part6</title>
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <style type="text/css">
+
+  body {
+    background: url('debut_light.png');
+  }
+
+  h1 {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    color: green;
+  }
+
+  #verse {
+    white-space: pre;
+    width: 0;
+    height: 0;
+    background-color: grey;
+  }
+  </style>
+
+  <script>
+
+  function getDay(day) {
+    switch(day){
+
+      case "1":
+      return "First day of Christmas";
+      break;
+
+      case "2":
+      return "Second day of Christmas";
+      break;
+
+      case "3":
+      return "Third day of Christmas";
+      break;
+
+      case "4":
+      return "Forth day of Christmas";
+      break;
+
+      default:
+      return "Looking forward to Christmas";
+      break;
+
+    }
+  }
+
+  function getVerse(day) {
+    switch(day){
+
+      case "1":
+      return `On the first day of Christmas
+my true love sent to me:
+A Partridge in a Pear Tree`;
+      break;
+
+      case "2":
+      return `On the second day of Christmas
+my true love sent to me:
+2 Turtle Doves and a Partridge in a Pear Tree`;
+      break;
+
+      case "3":
+      return `On the third day of Christmas
+my true love sent to me:
+3 French Hens
+2 Turtle Doves
+and a Partridge in a Pear Tree`;
+      break;
+
+      case "4":
+      return `On the fourth day of Christmas
+my true love sent to me:
+4 Calling Birds
+3 French Hens
+2 Turtle Doves
+and a Partridge in a Pear Tree`;
+      break;
+
+      default:
+      return "rest of verse";
+      break;
+    }
+  }
+
+  function checkDay(){
+    var value = document.getElementById("myInput").value;
+    var day = getDay(value);
+    var verse = getVerse(value);
+
+    document.getElementById("day").innerHTML = day;
+    document.getElementById("verse").innerHTML = verse;
+    var div = $("#verse");
+       div.animate({height: '100px', opacity: '0.4'}, "slow");
+       div.animate({width: '400px', opacity: '0.8'}, "slow");
+  }
+
+
+
+
+  </script>
+</head>
+<body>
+  <header>
+  </header>
+
+  <section>
+    <input id="myInput" type="text" value="Christmas">
+    <button onclick="checkDay()">Check Day of Christmas</button>
+    <p id="day"></p>
+    <p id="verse"></p>
+  </section>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>

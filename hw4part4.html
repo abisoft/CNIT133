@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HW4</title>
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+
+  body {
+    background: url('debut_light.png');
+  }
+
+  h1 {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    color: green;
+  }
+
+  input[readonly] {
+    background: transparent;
+    border: none;
+    text-align: right;
+    width: 100%;
+  }
+
+  </style>
+
+  <script>
+  function setValue(id, value) {
+    document.getElementById(id).value = value;
+  }
+
+  function getValue(id) {
+    return parseFloat(document.getElementById(id).value);
+  }
+
+  function process(){
+    var i = 0;
+    for (i = 0; i<5; i++){
+        var productNumber = getValue('p' + i);
+        var quantity = getValue('qty' + i);
+        var price = getValue('price' + i);
+        var amount = getValue('amount' + i);
+        var
+    }
+
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+  </header>
+
+  <section>
+    <form name="myform" action="">
+      <table border="1">
+
+        <tr>
+          <th>Product #</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Amount</th>
+
+        </tr>
+
+        <tr>
+          <td><input class="c" type="number" min="1" max="5" id="p1" size="10" value="1"/></td>
+          <td><input class="r" type="text" id="qty1" size="5" value="2" /></td>
+          <td><input id="price1" readonly value="2.98"/></td>
+          <td><input class="r" type="text" id="a1"  size="8" value="5.96" /></td>
+        </tr>
+        <tr>
+
+          <td><input class="c" type="text" id="p2" size="10" value="2" readonly/></td>
+          <td><input class="r" type="text" id="qty2" size="5" value="3" /></td>
+          <td><input id="price2" readonly value="4.50"/></td>
+          <td><input class="r" type="text" id="a2"  size="8" value="13.50" /></td>
+        </tr>
+        <tr>
+          <td><input class="c" type="text" id="p3" size="10" value="3" readonly /></td>
+          <td><input class="r" type="text" id="qty3" size="5"  value="4" /></td>
+          <td><input id="price3" readonly value="9.98"/></td>
+          <td><input class="r" type="text" id="a3"  size="8"  value="39.92" /></td>
+        </tr>
+        <tr>
+          <td><input class="c" type="text" id="p4" size="10" value="4"  readonly /></td>
+          <td><input  class="r" type="text" id="qty4" size="5"  value="1" /></td>
+          <td><input id="price4" readonly value="4.49"/></td>
+
+          <td><input  class="r" type="text" id="a4"  size="8"  value="4.49" /></td>
+        </tr>
+
+        <tr>
+          <td><input class="c" type="text" id="p5" size="10" value="5" readonly /></td>
+          <td><input  class="r" type="text" id="qty5" size="5"  value="1" /></td>
+          <td><input id="price5" readonly value="6.87"/></td>
+          <td><input class="r" type="text" id="a5"  size="8"  value="6.87" /></td>
+        </tr>
+        <tr>
+          <th colspan="3" align="left">Total Amount Sold</th>
+          <td><input class="r" type="text" id="ts" size="8" value="70.74" /></td>
+        </tr>
+
+        <tr>
+
+          <td><input type="button" value='Calculate' onclick="process()" /></td>
+          <td><input type="reset" value="Reset" size="10" /></td>
+        </tr>
+
+      </table>
+    </form>
+
+  </section>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>
